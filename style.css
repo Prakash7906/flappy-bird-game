@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  background-color: skyblue;
+}
+
+#board {
+  display: block;
+  margin: 0 auto;
+  background-image: url("image/background-day.png");
+}
+
+.ads {
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* Left and Right Ads (visible on desktop only) */
+.ads-left, .ads-right {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px;
+  display: none;
+}
+.ads-left {
+  left: 0;
+}
+.ads-right {
+  right: 0;
+}
+
+/* Bottom Ad */
+.ads-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Top Ad (only for mobile) */
+.ads-top-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .ads-left, .ads-right {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .ads-top-mobile {
+    display: block;
+  }
+  .ads-left, .ads-right {
+    display: none;
+  }
+}
